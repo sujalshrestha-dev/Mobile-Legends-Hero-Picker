@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROSAREHERE — MLBB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-left">
+        <div class="logo">
+            <img src="image/PSHlogo.jpg" alt="PSH Logo">
+            <span>PROSAREHERE</span>
+        </div>
+        <div class="search-wrap">
+            <i class="ri-search-line search-icon"></i>
+            <input type="search" placeholder="Search heroes...">
+        </div>
+    </div>
+
+    <img class="header-logo-center" src="image/mlbb-removebg-preview.png" alt="MLBB">
+
+    <div class="header-right">
+        <div class="header-icons">
+            <button class="hdr-btn" title="YouTube"><i class="ri-youtube-fill"></i></button>
+            <button class="hdr-btn" title="Discord"><i class="ri-discord-fill"></i></button>
+            <button class="hdr-btn" title="Notifications"><i class="ri-notification-3-fill"></i></button>
+        </div>
+        <div class="profile-chip">
+            <img src="image/profile/trigger.jpg" alt="PSH Trigger">
+            <div class="profile-chip-text">
+                <strong>PSH TRIGGER</strong>
+                <span>Marksman Main</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <button class="sidebar-btn sidebar-brand" title="Menu"><i class="ri-pantone-fill"></i></button>
+    <nav class="sidebar-nav">
+        <button class="sidebar-btn active" title="Home" data-label="Home"><i class="ri-home-gear-line"></i></button>
+        <button class="sidebar-btn" title="Lucky Spin" data-label="Spin"><i class="ri-bar-chart-box-ai-line"></i></button>
+        <button class="sidebar-btn" title="Lineup" data-label="Lineup"><i class="ri-bubble-chart-fill"></i></button>
+        <button class="sidebar-btn" title="Troll Picks" data-label="Troll"><i class="ri-ai-generate-2"></i></button>
+    </nav>
+    <div class="sidebar-bottom">
+        <button class="sidebar-btn" title="Exchange" data-label="About"><i class="ri-swap-line"></i></button>
+        <button class="sidebar-btn sidebar-diamond" title="Rank" data-label="Rank"><i class="ri-medal-fill"></i></button>
+    </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<div class="page-wrap">
+<main>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-sub">Mobile Legends · NP English</p>
+            <h1 class="hero-title">PROSAREHERE</h1>
+            <button class="cta-btn">Start Now <i class="ri-arrow-right-line"></i></button>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- LUCKY SPIN -->
+    <section class="card-section" id="Lucky-spin">
+        <div class="section-header">
+            <div class="section-header-text">
+                <h2>Lucky Spin</h2>
+                <p>Spin with Filter</p>
+            </div>
+            <div class="section-avatar chou-avatar"></div>
+        </div>
+
+        <div class="filter-bar">
+            <label class="filter-label">
+                <span>Hero Type</span>
+                <select id="heroTypeFilter">
+                    <option value="">All</option>
+                    <option value="Fighter">Fighter</option>
+                    <option value="Mage">Mage</option>
+                    <option value="Assassin">Assassin</option>
+                    <option value="Tank">Tank</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Support">Support</option>
+                </select>
+            </label>
+            <label class="filter-label">
+                <span>Exclude Type</span>
+                <select id="typeExclude">
+                    <option value="">None</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Magic">Magic</option>
+                </select>
+            </label>
+            <button class="action-btn" onclick="luckySpin()">
+                <i class="ri-refresh-line"></i> Spin!
+            </button>
+        </div>
+
+        <div id="luckyResult" class="spin-result"></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ACTIVE PLAYERS SLIDER 1 -->
+    <section class="players-section">
+        <div class="players-label"><span>ACTIVE PLAYERS</span></div>
+        <div class="slider-track-wrap">
+            <div class="slider-track" id="slider1">
+                <!-- JS will populate duplicates -->
+                <div class="player-card"><div class="player-hero-img alucard"></div><div class="player-info"><img src="image/profile/trigger.jpg" alt=""><strong>PSH TRIGGER</strong></div></div>
+                <div class="player-card"><div class="player-hero-img ling"></div><div class="player-info"><img src="image/profile/insano.jpg" alt=""><strong>PSH INSANO</strong></div></div>
+                <div class="player-card"><div class="player-hero-img bene"></div><div class="player-info"><img src="image/profile/kanuwa.jpg" alt=""><strong>KANAOWO</strong></div></div>
+                <div class="player-card"><div class="player-hero-img cecilion"></div><div class="player-info"><img src="image/profile/moon.jpg" alt=""><strong>MOON</strong></div></div>
+                <div class="player-card"><div class="player-hero-img xborg"></div><div class="player-info"><img src="image/profile/kenzo.jpg" alt=""><strong>PSH KENZO</strong></div></div>
+                <div class="player-card"><div class="player-hero-img bene"></div><div class="player-info"><img src="image/profile/prime.jpg" alt=""><strong>PSH PRIME</strong></div></div>
+                <div class="player-card"><div class="player-hero-img chou"></div><div class="player-info"><img src="image/profile/ronik.jpg" alt=""><strong>KYOUSUKE</strong></div></div>
+                <div class="player-card"><div class="player-hero-img melissa"></div><div class="player-info"><img src="image/profile/griffin.jpg" alt=""><strong>PSH GRIFFIN</strong></div></div>
+                <div class="player-card"><div class="player-hero-img arlott"></div><div class="player-info"><img src="image/profile/joyal.jpg" alt=""><strong>JOYAL</strong></div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- LINEUP -->
+    <section class="card-section lineup-section">
+        <div class="section-header">
+            <div class="section-header-text">
+                <h2>Lineup</h2>
+                <p>Build Your 5-Man Team</p>
+            </div>
+            <div class="section-avatar melissa-avatar"></div>
+        </div>
+
+        <div class="filter-bar">
+            <label class="filter-label">
+                <span>Game Phase</span>
+                <select id="phaseFilter">
+                    <option value="">All</option>
+                    <option value="EarlyToMid">Early / Mid</option>
+                    <option value="MidToLate">Mid / Late</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </label>
+            <label class="filter-label">
+                <span>Durability</span>
+                <select id="durabilityFilter">
+                    <option value="">All</option>
+                    <option value="Tanky">High Durability</option>
+                </select>
+            </label>
+            <label class="filter-label">
+                <span>Combat Style</span>
+                <select id="styleFilter">
+                    <option value="">All</option>
+                    <option value="Offensive">Offensive</option>
+                    <option value="Defensive">Defensive</option>
+                    <option value="Control">Control</option>
+                    <option value="Utility">Utility</option>
+                    <option value="tankkiller">Tank Killer</option>
+                </select>
+            </label>
+            <button class="action-btn" onclick="createLineup()">
+                <i class="ri-team-line"></i> Build Lineup
+            </button>
+        </div>
+
+        <div id="lineupResult" class="lane-grid">
+            <div class="lane-col">
+                <div class="lane-label">EXP Lane</div>
+                <div id="expLane" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Mid Lane</div>
+                <div id="midLane" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Jungle</div>
+                <div id="jungleLane" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Gold Lane</div>
+                <div id="goldLane" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Roam</div>
+                <div id="roamLane" class="lane-slot"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- TROLL PICKS -->
+    <section class="card-section troll-section">
+        <div class="section-header">
+            <div class="section-header-text">
+                <h2>Troll Picks</h2>
+                <p>Let's go for trolling</p>
+            </div>
+            <div class="section-avatar hanzo-avatar"></div>
+        </div>
+
+        <div class="filter-bar">
+            <label class="filter-label">
+                <span>Role</span>
+                <select id="trollRole">
+                    <option value="">Random</option>
+                    <option value="Assassin">All Assassin</option>
+                    <option value="Mage">All Mage</option>
+                    <option value="Fighter">All Fighter</option>
+                    <option value="Tank">All Tank</option>
+                    <option value="Support">All Support</option>
+                </select>
+            </label>
+            <label class="filter-label">
+                <span>Damage Type</span>
+                <select id="trollType">
+                    <option value="">Random</option>
+                    <option value="Physical">All Physical</option>
+                    <option value="Magic">All Magic</option>
+                </select>
+            </label>
+            <button class="action-btn troll-btn" onclick="createTrollLineup()">
+                <i class="ri-skull-line"></i> Troll!
+            </button>
+        </div>
+
+        <div id="trollResult" class="lane-grid">
+            <div class="lane-col">
+                <div class="lane-label">EXP Lane</div>
+                <div id="trollExp" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Mid Lane</div>
+                <div id="trollMid" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Jungle</div>
+                <div id="trollJungle" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Gold Lane</div>
+                <div id="trollGold" class="lane-slot"></div>
+            </div>
+            <div class="lane-col">
+                <div class="lane-label">Roam</div>
+                <div id="trollRoam" class="lane-slot"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ALL HEROES DISPLAY -->
+    <section class="display-section">
+        <div class="display-section-header">
+            <h2>All Heroes</h2>
+            <p>Complete hero roster</p>
+        </div>
+        <div id="heroesByType" class="hero-grid"></div>
+    </section>
+
+</main>
+</div>
+
+<script>
+// ---- HERO DATA ----
+const heroes = [
+    { name:'Kalea', type:['Physical'], lane:['roamLane','expLane'], phase:'MidToLate', style:['Burst','AOE'], heroType:['Support','Tank'], image:'image/characters/Kalea.png' },
+    { name:'Lukas', type:['Physical'], lane:['expLane','jungleLane'], phase:'EarlyToMid', style:['Burst','Sustain'], heroType:'Fighter', image:'image/characters/Lukas.png' },
+    { name:'Suyou', type:['Physical'], lane:['jungleLane','expLane'], phase:'EarlyToMid', style:['Burst','Poke','Mobility'], heroType:'Assassin', image:'image/characters/Suyou.png' },
+    { name:'Zhuxin', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Zone','Poke'], heroType:'Mage', image:'image/characters/Zhuxin.png' },
+    { name:'Chip', type:['Physical'], lane:['roamLane'], phase:'EarlyToMid', style:['Set','CC'], heroType:'Tank', image:'image/characters/Chip.png' },
+    { name:'Cici', type:['Physical'], lane:['expLane'], phase:'MidToLate', style:['Mobility','Poke','Zone','Tankkiller'], heroType:'Fighter', image:'image/characters/Cici.png' },
+    { name:'Nolan', type:['Physical'], lane:['jungleLane'], phase:'EarlyToMid', style:['Burst','Mobility'], heroType:'Assassin', image:'image/characters/Nolan.png' },
+    { name:'Ixia', type:['Physical'], lane:['goldLane'], phase:'MidToLate', style:['AOE','Poke'], heroType:'Marksman', image:'image/characters/Ixia.png' },
+    { name:'Arlott', type:['Physical'], lane:['expLane'], phase:'EarlyToMid', style:['CC','Tanky','Set'], heroType:'Fighter', image:'image/characters/Arlott.png' },
+    { name:'Novaria', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['Poke','Zone'], heroType:'Mage', image:'image/characters/Novaria.png' },
+    { name:'Joy', type:['Magic'], lane:['jungleLane','expLane'], phase:'EarlyToMid', style:['Mobility','Burst'], heroType:'Assassin', image:'image/characters/Joy.png' },
+    { name:'Fredrinn', type:['Physical'], lane:['expLane','jungleLane'], phase:'EarlyToMid', style:['Tanky','CC'], heroType:'Tank', image:'image/characters/Fredrinn.png' },
+    { name:'Julian', type:['Magic'], lane:['expLane','jungleLane'], phase:'EarlyToMid', style:['Burst','Mobility'], heroType:'Fighter', image:'image/characters/Julian.png' },
+    { name:'Xavier', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Poke'], heroType:'Mage', image:'image/characters/Xavier.png' },
+    { name:'Melissa', type:['Physical'], lane:['goldLane'], phase:'MidToLate', style:['Burst','Poke'], heroType:'Marksman', image:'image/characters/Melissa.png' },
+    { name:'Yin', type:['Physical'], lane:['expLane','jungleLane'], phase:'MidToLate', style:['Single Target','Burst'], heroType:'Fighter', image:'image/characters/Yin.png' },
+    { name:'Floryn', type:['Magic'], lane:['roamLane'], phase:'MidToLate', style:['Heal','Zone'], heroType:'Support', image:'image/characters/Floryn.png' },
+    { name:'Edith', type:['Magic','Physical'], lane:['expLane','roamLane'], phase:'EarlyToMid', style:['Tanky','Burst'], heroType:'Tank', image:'image/characters/Edith.png' },
+    { name:'Valentina', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['Burst','CC'], heroType:'Mage', image:'image/characters/Valentina.png' },
+    { name:'Aamon', type:['Magic'], lane:['jungleLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Assassin', image:'image/characters/Aamon.png' },
+    { name:'Aulus', type:['Physical'], lane:['jungleLane','expLane'], phase:'MidToLate', style:['Sustain','Tanky'], heroType:'Fighter', image:'image/characters/Aulus.png' },
+    { name:'Natan', type:['Magic'], lane:['goldLane'], phase:'Late', style:['Poke','Mobility'], heroType:'Marksman', image:'image/characters/Natan.png' },
+    { name:'Phoveus', type:['Magic'], lane:['expLane'], phase:'MidToLate', style:['Tanky','CCimmune'], heroType:'Fighter', image:'image/characters/Phoveus.png' },
+    { name:'Beatrix', type:['Physical'], lane:['goldLane'], phase:'MidToLate', style:['Burst','AOE'], heroType:'Marksman', image:'image/characters/Beatrix.png' },
+    { name:'Gloo', type:['Magic'], lane:['expLane','roamLane'], phase:'EarlyToMid', style:['Tanky','CC'], heroType:'Tank', image:'image/characters/Gloo.png' },
+    { name:'Paquito', type:['Physical'], lane:['expLane','jungleLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Fighter', image:'image/characters/Paquito.png' },
+    { name:'Mathilda', type:['Magic'], lane:['roamLane'], phase:'EarlyToMid', style:['Mobility','Heal'], heroType:'Support', image:'image/characters/Mathilda.png' },
+    { name:'Yve', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Zone'], heroType:'Mage', image:'image/characters/Yve.png' },
+    { name:'Brody', type:['Physical'], lane:['goldLane'], phase:'MidToLate', style:['Burst','Single Target'], heroType:'Marksman', image:'image/characters/Brody.png' },
+    { name:'Barats', type:['Physical'], lane:['expLane','jungleLane'], phase:'EarlyToMid', style:['Tanky','Set'], heroType:['Tank','Fighter'], image:'image/characters/Barats.png' },
+    { name:'Khaleed', type:['Physical'], lane:['expLane','roamLane'], phase:'MidToLate', style:['Sustain','Burst'], heroType:'Fighter', image:'image/characters/Khaleed.png' },
+    { name:'Benedetta', type:['Physical'], lane:['jungleLane','expLane'], phase:'EarlyToMid', style:['Mobility','Burst'], heroType:'Assassin', image:'image/characters/Benedetta.png' },
+    { name:'Luo Yi', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Set'], heroType:'Mage', image:'image/characters/Luo Yi.png' },
+    { name:'Yu Zhong', type:['Physical'], lane:['expLane'], phase:'MidToLate', style:['Lifesteal','AOE'], heroType:'Fighter', image:'image/characters/Yu Zhong.png' },
+    { name:'Popol Kupa', type:['Physical'], lane:['goldLane'], phase:'MidToLate', style:['Poke','Zone'], heroType:'Marksman', image:'image/characters/Popol and Kupa.png' },
+    { name:'Atlas', type:['Magic'], lane:['roamLane'], phase:'EarlyToMid', style:['CC','Set'], heroType:'Tank', image:'image/characters/Atlas.png' },
+    { name:'Carmilla', type:['Magic'], lane:['roamLane'], phase:'MidToLate', style:['Sustain','AOE'], heroType:['Support','Tank'], image:'image/characters/Carmilla.png' },
+    { name:'Cecilion', type:['Magic'], lane:['midLane'], phase:'Late', style:['AOE','Poke'], heroType:'Mage', image:'image/characters/Cecilion.png' },
+    { name:'Silvanna', type:['Magic'], lane:['expLane'], phase:'MidToLate', style:['CC','Single Target'], heroType:'Fighter', image:'image/characters/Silvana.png' },
+    { name:'Wanwan', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Mobility','Single Target','CCimmune'], heroType:'Marksman', image:'image/characters/Wanwan.png' },
+    { name:'Masha', type:['Physical'], lane:['expLane'], phase:'EarlyToMid', style:['Sustain','Lifesteal'], heroType:'Fighter', image:'image/characters/Masha.png' },
+    { name:'Baxia', type:['Magic'], lane:['roamLane','jungleLane'], phase:'EarlyToMid', style:['Tanky','Mobility'], heroType:'Tank', image:'image/characters/Baxia.png' },
+    { name:'Lylia', type:['Magic'], lane:['midLane'], phase:'EarlyToMid', style:['AOE','Mobility'], heroType:'Mage', image:'image/characters/Lylia.png' },
+    { name:'Dyrroth', type:['Physical'], lane:['expLane'], phase:'MidToLate', style:['Tankkiller','Burst'], heroType:'Fighter', image:'image/characters/Dyrroth.png' },
+    { name:'Ling', type:['Physical'], lane:['jungleLane'], phase:'Late', style:['Burst','Mobility'], heroType:'Assassin', image:'image/characters/Ling.jpg' },
+    { name:'X.Borg', type:['Physical'], lane:['expLane','jungleLane'], phase:'MidToLate', style:['Sustain','AOE'], heroType:'Fighter', image:'image/characters/XBorg.png' },
+    { name:'Terizla', type:['Physical'], lane:['expLane'], phase:'MidToLate', style:['AOE','Tanky'], heroType:'Fighter', image:'image/characters/Terizla.png' },
+    { name:'Esmeralda', type:['Magic'], lane:['expLane'], phase:'MidToLate', style:['Sustain','Tankkiller'], heroType:['Mage','Fighter'], image:'image/characters/Esmeralda.png' },
+    { name:'Guinevere', type:['Magic'], lane:['expLane','jungleLane','roamLane'], phase:'MidToLate', style:['Burst','CC'], heroType:'Fighter', image:'image/characters/Guinevere.png' },
+    { name:'Granger', type:['Physical'], lane:['goldLane','jungleLane'], phase:'MidToLate', style:['Burst','Poke'], heroType:'Marksman', image:'image/characters/Granger.png' },
+    { name:'Khufra', type:['Magic'], lane:['roamLane'], phase:'EarlyToMid', style:['Set','CC'], heroType:'Tank', image:'image/characters/Khufra.png' },
+    { name:'Badang', type:['Physical'], lane:['expLane','roamLane'], phase:'MidToLate', style:['Burst','AOE'], heroType:'Fighter', image:'image/characters/Badang.png' },
+    { name:'Faramis', type:['Magic'], lane:['roamLane','midLane'], phase:'MidToLate', style:['AOE','Sustain'], heroType:['Support','Mage'], image:'image/characters/Faramis.png' },
+    { name:'Kadita', type:['Magic'], lane:['midLane','roamLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Mage', image:'image/characters/Kadita.png' },
+    { name:'Minsitthar', type:['Physical'], lane:['expLane','roamLane'], phase:'EarlyToMid', style:['Set','CC'], heroType:'Fighter', image:'image/characters/Minsitthar.png' },
+    { name:'Harith', type:['Magic'], lane:['midLane','goldLane'], phase:'Late', style:['Mobility','Lifesteal'], heroType:'Mage', image:'image/characters/Harith.png' },
+    { name:'Thamuz', type:['Physical'], lane:['expLane'], phase:'EarlyToMid', style:['Sustain','Lifesteal'], heroType:'Fighter', image:'image/characters/Thamuz.png' },
+    { name:'Kimmy', type:['Magic'], lane:['goldLane'], phase:'MidToLate', style:['Poke','Mobility'], heroType:'Marksman', image:'image/characters/Kimmy.png' },
+    { name:'Belerick', type:['Magic'], lane:['roamLane'], phase:'EarlyToMid', style:['Tanky','CC'], heroType:'Tank', image:'image/characters/Belerick.png' },
+    { name:'Hanzo', type:['Physical'], lane:['jungleLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Assassin', image:'image/characters/Hanzo.png' },
+    { name:'Lunox', type:['Magic'], lane:['midLane','goldLane'], phase:'MidToLate', style:['AOE','Tankkiller'], heroType:'Mage', image:'image/characters/Lunox.png' },
+    { name:'Leomord', type:['Physical'], lane:['expLane','jungleLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Fighter', image:'image/characters/Leomord.png' },
+    { name:'Vale', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Burst'], heroType:'Mage', image:'image/characters/Vale.png' },
+    { name:'Claude', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Mobility','AOE'], heroType:'Marksman', image:'image/characters/Claude.png' },
+    { name:'Aldous', type:['Physical'], lane:['expLane','jungleLane'], phase:'Late', style:['Single Target','Burst'], heroType:'Fighter', image:'image/characters/Aldous.png' },
+    { name:'Selena', type:['Magic'], lane:['midLane','roamLane'], phase:'EarlyToMid', style:['Burst','CC'], heroType:['Assassin','Mage'], image:'image/characters/Selena.png' },
+    { name:'Kaja', type:['Magic'], lane:['roamLane','expLane'], phase:'MidToLate', style:['Set','Single Target'], heroType:'Support', image:'image/characters/Kaja.png' },
+    { name:'Chang', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['Poke','AOE'], heroType:'Mage', image:'image/characters/Chang.png' },
+    { name:'Hanabi', type:['Physical'], lane:['goldLane'], phase:'Late', style:['AOE','Sustain'], heroType:'Marksman', image:'image/characters/Hanabi.png' },
+    { name:'Uranus', type:['Magic'], lane:['expLane'], phase:'MidToLate', style:['Tanky','Sustain','Lifesteal'], heroType:'Tank', image:'image/characters/Uranus.png' },
+    { name:'Martis', type:['Physical'], lane:['jungleLane'], phase:'MidToLate', style:['Burst','CCimmune'], heroType:'Fighter', image:'image/characters/Martis.png' },
+    { name:'Valir', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Poke','CCimmune'], heroType:'Mage', image:'image/characters/Valir.png' },
+    { name:'Gusion', type:['Magic'], lane:['jungleLane','midLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Assassin', image:'image/characters/Gusion.png' },
+    { name:'Angela', type:['Magic'], lane:['roamLane'], phase:'MidToLate', style:['Heal','CC'], heroType:'Support', image:'image/characters/Angela.png' },
+    { name:'Jawhead', type:['Physical'], lane:['expLane','roamLane'], phase:'MidToLate', style:['Burst','Set','Single Target'], heroType:'Fighter', image:'image/characters/Jawhead.png' },
+    { name:'Lesley', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Single Target','Poke'], heroType:'Marksman', image:'image/characters/Lesley.png' },
+    { name:'Pharsa', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Poke','Mobility'], heroType:'Mage', image:'image/characters/Pharsa.png' },
+    { name:'Helcurt', type:['Physical'], lane:['jungleLane'], phase:'MidToLate', style:['Burst','Silence'], heroType:'Assassin', image:'image/characters/Helcurt.png' },
+    { name:'Zhask', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['Zone','AOE'], heroType:'Mage', image:'image/characters/Zhask.png' },
+    { name:'Hylos', type:['Magic'], lane:['roamLane','expLane'], phase:'EarlyToMid', style:['Tanky','CC'], heroType:'Tank', image:'image/characters/Hylos.png' },
+    { name:'Diggie', type:['Magic'], lane:['roamLane'], phase:'MidToLate', style:['CC','Support'], heroType:'Support', image:'image/characters/Diggie.png' },
+    { name:'Lancelot', type:['Physical'], lane:['jungleLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Assassin', image:'image/characters/Lancelot.png' },
+    { name:'Odette', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Burst'], heroType:'Mage', image:'image/characters/Odette.png' },
+    { name:'Argus', type:['Physical'], lane:['expLane'], phase:'Late', style:['Lifesteal','CCimmune'], heroType:'Fighter', image:'image/characters/Argus.png' },
+    { name:'Grock', type:['Physical'], lane:['roamLane'], phase:'EarlyToMid', style:['Tanky','Set'], heroType:'Tank', image:'image/characters/Grock.png' },
+    { name:'Irithel', type:['Physical'], lane:['goldLane'], phase:'MidToLate', style:['AOE','Sustain'], heroType:'Marksman', image:'image/characters/Irithel.png' },
+    { name:'Harley', type:['Magic'], lane:['midLane','jungleLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Mage', image:'image/characters/Harley.png' },
+    { name:'Gatotkaca', type:['Magic'], lane:['expLane','roamLane'], phase:'EarlyToMid', style:['Tanky','AOE'], heroType:'Tank', image:'image/characters/Gatotkaca.png' },
+    { name:'Karrie', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Tankkiller','Burst'], heroType:'Marksman', image:'image/characters/Karrie.png' },
+    { name:'Roger', type:['Physical'], lane:['jungleLane','expLane'], phase:'MidToLate', style:['Lifesteal','Burst'], heroType:'Fighter', image:'image/characters/Roger.png' },
+    { name:'Vexana', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Zone'], heroType:'Mage', image:'image/characters/Vexana.png' },
+    { name:'Lapu-Lapu', type:['Physical'], lane:['expLane'], phase:'MidToLate', style:['Burst','AOE'], heroType:'Fighter', image:'image/characters/Lapu-Lapu.png' },
+    { name:'Aurora', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['CC','Burst'], heroType:'Mage', image:'image/characters/Aurora.png' },
+    { name:'Hilda', type:['Physical'], lane:['expLane','roamLane'], phase:'EarlyToMid', style:['Tanky','Burst'], heroType:'Fighter', image:'image/characters/Hilda.png' },
+    { name:'Estes', type:['Magic'], lane:['roamLane'], phase:'MidToLate', style:['Heal','Sustain'], heroType:'Support', image:'image/characters/Estes.png' },
+    { name:'Cyclops', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['Single Target','Burst'], heroType:'Mage', image:'image/characters/Cyclops.png' },
+    { name:'Johnson', type:['Magic'], lane:['roamLane'], phase:'EarlyToMid', style:['Set','Tanky'], heroType:'Tank', image:'image/characters/Johnson.png' },
+    { name:'Moskov', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Single Target','Tankkiller'], heroType:'Marksman', image:'image/characters/Moskov.png' },
+    { name:'Yi Sun-Shin', type:['Physical'], lane:['jungleLane'], phase:'MidToLate', style:['Burst','AOE'], heroType:'Marksman', image:'image/characters/Yi Sun-Shin.png' },
+    { name:'Ruby', type:['Physical'], lane:['expLane','roamLane'], phase:'MidToLate', style:['Lifesteal','CC'], heroType:'Fighter', image:'image/characters/Ruby.png' },
+    { name:'Alpha', type:['Physical'], lane:['expLane','jungleLane'], phase:'MidToLate', style:['Tankkiller','Sustain'], heroType:'Fighter', image:'image/characters/Alpha.png' },
+    { name:'Sun', type:['Physical'], lane:['expLane'], phase:'MidToLate', style:['Lifesteal'], heroType:'Fighter', image:'image/characters/Sun.png' },
+    { name:'Chou', type:['Physical'], lane:['expLane','roamLane'], phase:'MidToLate', style:['Set','CCimmune'], heroType:'Fighter', image:'image/characters/Chou.png' },
+    { name:'Kagura', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['Burst','Poke'], heroType:'Mage', image:'image/characters/Kagura.png' },
+    { name:'Natalia', type:['Physical'], lane:['roamLane'], phase:'MidToLate', style:['Stealth','Burst'], heroType:'Assassin', image:'image/characters/Natalia.png' },
+    { name:'Gord', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['AOE','Poke'], heroType:'Mage', image:'image/characters/Gord.png' },
+    { name:'Freya', type:['Physical'], lane:['expLane'], phase:'MidToLate', style:['Sustain','Burst'], heroType:'Fighter', image:'image/characters/Freya.png' },
+    { name:'Hayabusa', type:['Physical'], lane:['jungleLane'], phase:'MidToLate', style:['Single Target','Mobility'], heroType:'Assassin', image:'image/characters/Hayabusa.png' },
+    { name:'Lolita', type:['Magic'], lane:['roamLane'], phase:'EarlyToMid', style:['CC','Tanky'], heroType:'Tank', image:'image/characters/Lolita.png' },
+    { name:'Minotaur', type:['Magic'], lane:['roamLane'], phase:'MidToLate', style:['AOE','CC'], heroType:'Tank', image:'image/characters/Minotaur.png' },
+    { name:'Layla', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Burst','Poke'], heroType:'Marksman', image:'image/characters/Layla.png' },
+    { name:'Fanny', type:['Physical'], lane:['jungleLane'], phase:'EarlyToMid', style:['Mobility','Burst'], heroType:'Assassin', image:'image/characters/Fanny.png' },
+    { name:'Zilong', type:['Physical'], lane:['expLane'], phase:'EarlyToMid', style:['Mobility','Single Target'], heroType:'Fighter', image:'image/characters/Zilong.png' },
+    { name:'Eudora', type:['Magic'], lane:['midLane'], phase:'MidToLate', style:['Burst','CC','Single Target'], heroType:'Mage', image:'image/characters/Eudora.png' },
+    { name:'Rafaela', type:['Magic'], lane:['roamLane'], phase:'MidToLate', style:['Heal','Poke'], heroType:'Support', image:'image/characters/Rafaela.png' },
+    { name:'Clint', type:['Physical'], lane:['goldLane'], phase:'MidToLate', style:['Burst','Single Target'], heroType:'Marksman', image:'image/characters/Clint.png' },
+    { name:'Bruno', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Burst','Poke'], heroType:'Marksman', image:'image/characters/Bruno.png' },
+    { name:'Bane', type:['Physical','Magic'], lane:['expLane','jungleLane'], phase:'MidToLate', style:['AOE','Lifesteal'], heroType:'Fighter', image:'image/characters/Bane.png' },
+    { name:'Franco', type:['Physical'], lane:['roamLane'], phase:'EarlyToMid', style:['CC','Set'], heroType:'Tank', image:'image/characters/Franco.png' },
+    { name:'Akai', type:['Magic'], lane:['roamLane','jungleLane'], phase:'MidToLate', style:['Set','Tanky'], heroType:'Tank', image:'image/characters/Akai.png' },
+    { name:'Karina', type:['Magic'], lane:['jungleLane'], phase:'MidToLate', style:['Burst','Mobility'], heroType:'Assassin', image:'image/characters/Karina.png' },
+    { name:'Alucard', type:['Physical'], lane:['jungleLane'], phase:'MidToLate', style:['Lifesteal','Single Target'], heroType:'Fighter', image:'image/characters/Alucard.png' },
+    { name:'Tigreal', type:['Magic'], lane:['roamLane'], phase:'EarlyToMid', style:['CC','Set','Tanky'], heroType:'Tank', image:'image/characters/Tigreal.png' },
+    { name:'Nana', type:['Magic'], lane:['midLane','roamLane'], phase:'MidToLate', style:['CC','Poke'], heroType:'Mage', image:'image/characters/Nana.png' },
+    { name:'Alice', type:['Magic'], lane:['expLane'], phase:'MidToLate', style:['Sustain','AOE'], heroType:'Mage', image:'image/characters/Alice.png' },
+    { name:'Saber', type:['Physical'], lane:['jungleLane'], phase:'EarlyToMid', style:['Single Target','Burst'], heroType:'Assassin', image:'image/characters/Saber.png' },
+    { name:'Balmond', type:['Physical'], lane:['expLane','jungleLane'], phase:'EarlyToMid', style:['Tanky','AOE'], heroType:'Fighter', image:'image/characters/Balmond.png' },
+    { name:'Miya', type:['Physical'], lane:['goldLane'], phase:'Late', style:['Single Target','Sustain'], heroType:'Marksman', image:'image/characters/Miya.png' }
+];
+
+// ---- HERO CARD TEMPLATES ----
+function heroTypes(h) { return Array.isArray(h.heroType) ? h.heroType.join('/') : h.heroType; }
+
+function spinCard(h) {
+    return `<div class="spin-card">
+        <img src="${h.image}" alt="${h.name}">
+        <div class="spin-card-info">
+            <strong>${h.name}</strong>
+            <span class="badge">${heroTypes(h)}</span>
+            <ul>
+                <li><i class="ri-shield-flash-line"></i> ${h.type.join('/')}</li>
+                <li><i class="ri-map-pin-2-line"></i> ${h.lane.join(' / ')}</li>
+                <li><i class="ri-time-line"></i> ${h.phase}</li>
+                <li><i class="ri-sword-line"></i> ${h.style.join(', ')}</li>
+            </ul>
+        </div>
+    </div>`;
+}
+
+function laneCard(h) {
+    return `<div class="lane-hero-card">
+        <img src="${h.image}" alt="${h.name}">
+        <div class="lane-hero-info">
+            <strong>${h.name}</strong>
+            <span class="badge sm">${heroTypes(h)}</span>
+            <small>${h.style.join(', ')}</small>
+        </div>
+    </div>`;
+}
+
+function gridCard(h) {
+    return `<div class="grid-hero-card">
+        <img src="${h.image}" alt="${h.name}">
+        <div class="grid-hero-info">
+            <strong>${h.name}</strong>
+            <span class="badge sm">${heroTypes(h)}</span>
+            <p>${h.type.join('/')} · ${h.phase}</p>
+            <p>${h.style.join(', ')}</p>
+        </div>
+    </div>`;
+}
+
+// ---- HERO BANNER SLIDESHOW ----
+const bannerImages = [
+    'image/wallpapersden.com_mobile-legends-gaming-2022-hd_1920x1080.jpg',
+    'image/1186318.jpg',
+    'image/1293088.jpg'
+];
+let bannerIdx = 0;
+const heroBanner = document.getElementById('hero');
+function cycleBanner() {
+    heroBanner.style.backgroundImage = `url(${bannerImages[bannerIdx]})`;
+    bannerIdx = (bannerIdx + 1) % bannerImages.length;
+}
+cycleBanner();
+setInterval(cycleBanner, 4000);
+
+// ---- LUCKY SPIN ----
+function luckySpin() {
+    const heroType = document.getElementById('heroTypeFilter').value;
+    const typeEx = document.getElementById('typeExclude').value;
+    let filtered = heroes.filter(h =>
+        (!heroType || (Array.isArray(h.heroType) ? h.heroType.includes(heroType) : h.heroType === heroType)) &&
+        (!typeEx || !h.type.map(t=>t.toLowerCase()).includes(typeEx.toLowerCase()))
+    );
+    const result = document.getElementById('luckyResult');
+    if (!filtered.length) { result.innerHTML = '<p class="no-result">No hero matches your filters!</p>'; return; }
+    const pick = filtered[Math.floor(Math.random() * filtered.length)];
+    result.innerHTML = spinCard(pick);
+    result.querySelector('.spin-card').classList.add('pop-in');
+}
+
+// ---- LINEUP ----
+function createLineup() {
+    const phase = document.getElementById('phaseFilter').value;
+    const durability = document.getElementById('durabilityFilter').value;
+    const style = document.getElementById('styleFilter').value;
+    let pool = [...heroes];
+    const lanes = ['expLane','midLane','jungleLane','goldLane','roamLane'];
+    lanes.forEach(id => document.getElementById(id).innerHTML = '');
+
+    lanes.forEach(laneId => {
+        let filtered = pool.filter(h => {
+            const lane = h.lane.some(l => l.toLowerCase() === laneId.toLowerCase());
+            const dur = !durability || h.style.some(s=>s.toLowerCase()==='tanky');
+            let st = true;
+            if (style==='Offensive') st = h.style.some(s=>['Burst','Poke','Single Target'].includes(s));
+            else if (style==='Defensive') st = h.style.some(s=>['Sustain','Heal','Lifesteal','Tanky'].map(x=>x.toLowerCase()).includes(s.toLowerCase()));
+            else if (style==='Control') st = h.style.some(s=>['CC','Set','Zone','AOE'].includes(s));
+            else if (style==='Utility') st = h.style.some(s=>['Mobility','CCimmune','Stealth'].includes(s));
+            else if (style==='tankkiller') st = h.style.some(s=>s.toLowerCase()==='tankkiller');
+            let ph = true;
+            if (phase==='EarlyToMid') ph = ['Early','EarlyToMid'].includes(h.phase);
+            else if (phase==='MidToLate') ph = ['MidToLate','Late'].includes(h.phase);
+            return lane && dur && st && ph;
+        });
+        if (!filtered.length) filtered = pool.filter(h => {
+            const lane = h.lane.some(l => l.toLowerCase() === laneId.toLowerCase());
+            let ph = true;
+            if (phase==='EarlyToMid') ph = ['Early','EarlyToMid'].includes(h.phase);
+            else if (phase==='MidToLate') ph = ['MidToLate','Late'].includes(h.phase);
+            return lane && ph;
+        });
+        if (!filtered.length) filtered = pool.filter(h => h.lane.some(l => l.toLowerCase() === laneId.toLowerCase()));
+
+        if (filtered.length) {
+            const pick = filtered[Math.floor(Math.random() * filtered.length)];
+            pool = pool.filter(h => h.name !== pick.name);
+            const el = document.getElementById(laneId);
+            el.innerHTML = laneCard(pick);
+            el.querySelector('.lane-hero-card').classList.add('pop-in');
+        } else {
+            document.getElementById(laneId).innerHTML = '<p class="no-result">—</p>';
+        }
+    });
+}
+
+// ---- TROLL ----
+function createTrollLineup() {
+    const role = document.getElementById('trollRole').value;
+    const type = document.getElementById('trollType').value;
+    let filtered = heroes.filter(h =>
+        (!role || (Array.isArray(h.heroType) ? h.heroType.includes(role) : h.heroType === role)) &&
+        (!type || h.type.map(t=>t.toLowerCase()).includes(type.toLowerCase()))
+    ).sort(()=>0.5-Math.random()).slice(0,5);
+
+    const ids = ['trollExp','trollMid','trollJungle','trollGold','trollRoam'];
+    ids.forEach(id => document.getElementById(id).innerHTML = '');
+    filtered.forEach((h, i) => {
+        const el = document.getElementById(ids[i]);
+        el.innerHTML = laneCard(h);
+        el.querySelector('.lane-hero-card').classList.add('pop-in');
+    });
+}
+
+// ---- ALL HEROES GRID ----
+function renderGrid() {
+    document.getElementById('heroesByType').innerHTML = heroes.map(gridCard).join('');
+}
+renderGrid();
+
+// ---- DUPLICATE SLIDER ITEMS FOR SEAMLESS LOOP ----
+const track = document.getElementById('slider1');
+track.innerHTML += track.innerHTML;
+</script>
+</body>
+</html>
